@@ -1,4 +1,8 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DeliveriesDetails {
 
@@ -50,8 +54,50 @@ public class DeliveriesDetails {
         this.fielder = fielder;
     }
 
-    public static List<DeliveriesDetails> getDeliveriesDetailsList() {
+    @Override
+    public String toString() {
+        return "DeliveriesDetails{" +
+                "matchid=" + matchid +
+                ", inning=" + inning +
+                ", batingteam='" + batingteam + '\'' +
+                ", bowlingteam='" + bowlingteam + '\'' +
+                ", over=" + over +
+                ", ball=" + ball +
+                ", batsman='" + batsman + '\'' +
+                ", nonstriker='" + nonstriker + '\'' +
+                ", bowler='" + bowler + '\'' +
+                ", issuperover=" + issuperover +
+                ", wideruns=" + wideruns +
+                ", byeruns=" + byeruns +
+                ", legbyeruns=" + legbyeruns +
+                ", noballruns=" + noballruns +
+                ", penalityruns=" + penalityruns +
+                ", batsmanruns=" + batsmanruns +
+                ", extraruns=" + extraruns +
+                ", totalruns=" + totalruns +
+                ", playerdismissed='" + playerdismissed + '\'' +
+                ", dismissalkind='" + dismissalkind + '\'' +
+                ", fielder='" + fielder + '\'' +
+                '}';
+    }
+
+    public static List<DeliveriesDetails> getDeliveriesDetailsList(String s) throws IOException {
+        Path locationOfFile=Path.of(s);
+        //Below code throws IOException and returns a stream of string
+        //skip(1) will skip the first line because its a header
+        //map individual string to respective object
+        DeliveriesDetailsList= Files.lines(locationOfFile).skip(1).map(row -> {return getDeliveriesDetails(row);}).collect(Collectors.toList());
         return DeliveriesDetailsList;
+    }
+
+    private static DeliveriesDetails getDeliveriesDetails(String row){
+        String[] data=new String[21];
+        String[] actualdata=row.split(",");
+        for(int i=0;i<actualdata.length;i++){
+            data[i]=actualdata[i];
+        }
+        return new DeliveriesDetails(Integer.parseInt(data[0]),Integer.parseInt(data[1]),data[2],data[3],Integer.parseInt(data[4]),Integer.parseInt(data[5]),data[6],data[7],data[8],Integer.parseInt(data[9]),
+                Integer.parseInt(data[10]),Integer.parseInt(data[11]),Integer.parseInt(data[12]),Integer.parseInt(data[13]),Integer.parseInt(data[14]),Integer.parseInt(data[15]),Integer.parseInt(data[16]),Integer.parseInt(data[17]),data[18],data[19],data[20]);
     }
 
 }

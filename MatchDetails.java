@@ -76,22 +76,22 @@ public class MatchDetails {
 
 
     public static List<MatchDetails> getMatchDetailsList(String p) throws IOException {
-        Path path=Path.of(p);
+        Path locationOfFile=Path.of(p);
         //Below code throws IOException and returns a stream of string
         //skip(1) will skip the first line because its a header
         //map individual string to respective object
-        matchDetailsList= Files.lines(path).skip(1).map(line -> {return getMatchDetails(line);}).collect(Collectors.toList());
+        matchDetailsList= Files.lines(locationOfFile).skip(1).map(row -> {return getMatchDetails(row);}).collect(Collectors.toList());
         return matchDetailsList;
     }
 
     //Converting line into Object and returning
-    private static MatchDetails getMatchDetails(String line){
-        String[] fields=new String[18];
-        String[] acfields=line.split(",");
-        for(int i=0;i<acfields.length;i++){
-            fields[i]=acfields[i];
+    private static MatchDetails getMatchDetails(String row){
+        String[] data=new String[18];
+        String[] actualdata=row.split(",");
+        for(int i=0;i<actualdata.length;i++){
+            data[i]=actualdata[i];
         }
-        return new MatchDetails(Integer.parseInt(fields[0]),Integer.parseInt(fields[1]),fields[2],fields[3],fields[4],fields[5],fields[6],fields[7],fields[8],Integer.parseInt(fields[9]),
-                fields[10],fields[11],fields[12],fields[13],fields[14],fields[15],fields[16],fields[17]);
+        return new MatchDetails(Integer.parseInt(data[0]),Integer.parseInt(data[1]),data[2],data[3],data[4],data[5],data[6],data[7],data[8],Integer.parseInt(data[9]),
+                data[10],data[11],data[12],data[13],data[14],data[15],data[16],data[17]);
     }
 }
