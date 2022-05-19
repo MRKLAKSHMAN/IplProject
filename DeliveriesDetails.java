@@ -4,27 +4,27 @@ public class DeliveriesDetails {
 
     static List<DeliveriesDetails> DeliveriesDetailsList;
 
-    private final int matchid;
-    private final int inning;
-    private final String batingteam;
-    private final String bowlingteam;
-    private final int over;
-    private final int ball;
-    private final String batsman;
-    private final String nonstriker;
-    private final String bowler;
-    private final int issuperover;
-    private final int wideruns;
-    private final int byeruns;
-    private final int legbyeruns;
-    private final int noballruns;
-    private final int penalityruns;
-    private final int batsmanruns;
-    private final int extraruns;
-    private final int totalruns;
-    private final String playerdismissed;
-    private final String dismissalkind;
-    private final String fielder;
+    final int matchid;
+    final int inning;
+    final String batingteam;
+    final String bowlingteam;
+    final int over;
+    final int ball;
+    final String batsman;
+    final String nonstriker;
+    final String bowler;
+    final int issuperover;
+    final int wideruns;
+    final int byeruns;
+    final int legbyeruns;
+    final int noballruns;
+    final int penalityruns;
+    final int batsmanruns;
+    final int extraruns;
+    final int totalruns;
+    final String playerdismissed;
+    final String dismissalkind;
+    final String fielder;
 
     public DeliveriesDetails(int matchid, int inning, String batingteam, String bowlingteam, int over, int ball, String batsman, String nonstriker, String bowler, int issuperover, int wideruns, int byeruns, int legbyeruns, int noballruns, int penalityruns, int batsmanruns, int extraruns, int totalruns, String playerdismissed, String dismissalkind, String fielder) {
         this.matchid = matchid;
@@ -54,87 +54,4 @@ public class DeliveriesDetails {
         return DeliveriesDetailsList;
     }
 
-    public int getMatchid() {
-        return matchid;
-    }
-
-    public int getInning() {
-        return inning;
-    }
-
-    public String getBatingteam() {
-        return batingteam;
-    }
-
-    public String getBowlingteam() {
-        return bowlingteam;
-    }
-
-    public int getOver() {
-        return over;
-    }
-
-    public int getBall() {
-        return ball;
-    }
-
-    public String getBatsman() {
-        return batsman;
-    }
-
-    public String getNonstriker() {
-        return nonstriker;
-    }
-
-    public String getBowler() {
-        return bowler;
-    }
-
-    public int getIssuperover() {
-        return issuperover;
-    }
-
-    public int getWideruns() {
-        return wideruns;
-    }
-
-    public int getByeruns() {
-        return byeruns;
-    }
-
-    public int getLegbyeruns() {
-        return legbyeruns;
-    }
-
-    public int getNoballruns() {
-        return noballruns;
-    }
-
-    public int getPenalityruns() {
-        return penalityruns;
-    }
-
-    public int getBatsmanruns() {
-        return batsmanruns;
-    }
-
-    public int getExtraruns() {
-        return extraruns;
-    }
-
-    public int getTotalruns() {
-        return totalruns;
-    }
-
-    public String getPlayerdismissed() {
-        return playerdismissed;
-    }
-
-    public String getDismissalkind() {
-        return dismissalkind;
-    }
-
-    public String getFielder() {
-        return fielder;
-    }
 }
