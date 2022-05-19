@@ -41,4 +41,103 @@ public class MatchDetails {
         this.umpire2 = umpire2;
         this.umpire3 = umpire3;
     }
+
+    //Declaring getter methods to enable the variables to be accessed in other classes
+
+    public int getId() {
+        return id;
+    }
+
+    public int getSeason() {
+        return season;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public String getTeam1() {
+        return team1;
+    }
+
+    public String getTeam2() {
+        return team2;
+    }
+
+    public String getTosswinner() {
+        return tosswinner;
+    }
+
+    public String getTossdecision() {
+        return tossdecision;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public int getDlapplied() {
+        return dlapplied;
+    }
+
+    public String getWinner() {
+        return winner;
+    }
+
+    public String getWinbyruns() {
+        return winbyruns;
+    }
+
+    public String getWinbywickets() {
+        return winbywickets;
+    }
+
+    public String getPlayerofmatch() {
+        return playerofmatch;
+    }
+
+    public String getVenue() {
+        return venue;
+    }
+
+    public String getUmpire1() {
+        return umpire1;
+    }
+
+    public String getUmpire2() {
+        return umpire2;
+    }
+
+    public String getUmpire3() {
+        return umpire3;
+    }
+
+    //Overriding toString() for understandable output
+    @Override
+    public String toString() {
+        return "MatchDetails{" +
+                "id=" + id +
+                ", season=" + season +
+                ", city='" + city + '\'' +
+                ", date='" + date + '\'' +
+                ", team1='" + team1 + '\'' +
+                ", team2='" + team2 + '\'' +
+                ", tosswinner='" + tosswinner + '\'' +
+                ", tossdecision='" + tossdecision + '\'' +
+                ", result='" + result + '\'' +
+                ", dlapplied=" + dlapplied +
+                ", winner='" + winner + '\'' +
+                ", winbyruns='" + winbyruns + '\'' +
+                ", winbywickets='" + winbywickets + '\'' +
+                ", playerofmatch='" + playerofmatch + '\'' +
+                ", venue='" + venue + '\'' +
+                ", umpire1='" + umpire1 + '\'' +
+                ", umpire2='" + umpire2 + '\'' +
+                ", umpire3='" + umpire3 + '\'' +
+                '}';
+    }
 }
