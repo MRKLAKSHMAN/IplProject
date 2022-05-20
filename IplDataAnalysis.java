@@ -124,6 +124,17 @@ public class IplDataAnalysis {
 
     }
 
+    //This below function deduces the teams won the toss and choose to field and won the match
+    public void wonTossAndWonMatchByFieldingFirst(){
+        LinkedHashSet<String> team=new LinkedHashSet();
+        for(MatchDetails m:md){
+            if(m.tossdecision.equals("field") && m.tosswinner.equals(m.winner)){
+                team.add("Match ID: "+m.id+",Team won: "+m.winner);
+            }
+        }
+        System.out.println("Teams won the toss and choose to field and won the match\n"+team+"\n------------------");
+    }
+
 
     public static void main(String[] args) throws IOException {
        md=MatchDetails.getMatchDetailsList("/home/lakshman/IdeaProjects/IPLProject/Resources/matches.csv");
@@ -133,6 +144,7 @@ public class IplDataAnalysis {
        i.numOfMatchesWonByEveryTeam();
        i.extraRunsPerTeam();
        i.economicBowlers();
+       i.wonTossAndWonMatchByFieldingFirst();
 
 
     }
