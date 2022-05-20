@@ -124,7 +124,7 @@ public class IplDataAnalysis {
 
     }
 
-    //This below function deduces the teams won the toss and choose to field and won the match
+    //(My Own Scenario)This below function deduces the teams won the toss and choose to field and won the match
     public void wonTossAndWonMatchByFieldingFirst(){
         LinkedHashSet<String> team=new LinkedHashSet();
         for(MatchDetails m:md){
