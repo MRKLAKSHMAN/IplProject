@@ -93,8 +93,8 @@ public class IplDataAnalysis {
         //Storing bowler names and their given runs and Number of overs they bowled
         for(Integer i:ids){
             for(DeliveriesDetails q:dd){
-                String bowlername=q.bowler;
                 if(q.matchid==i){
+                    String bowlername=q.bowler;
                     int runsgiven=q.totalruns;
                     if(bowRuns.containsKey(bowlername)){
                         int runsval=bowRuns.get(bowlername);
@@ -103,8 +103,8 @@ public class IplDataAnalysis {
                         bowBalls.put(bowlername,ballsval+1);
                     }
                     else{
-                        bowRuns.put(bowlername,0);
-                        bowBalls.put(bowlername,0);
+                        bowRuns.put(bowlername,q.totalruns);
+                        bowBalls.put(bowlername,1);
                     }
                 }
             }
